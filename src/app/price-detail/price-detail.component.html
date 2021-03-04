@@ -1,0 +1,10 @@
+<h2 style="margin-bottom:0;">{{ translate.text('Page.Name') }}</h2>
+<div class="address">
+    <mat-icon>place</mat-icon>
+    <span>{{ firm.address.zip }}</span>
+    <span>{{ firm.address.city }},</span>
+    <span>{{ firm.address.addressLine }}</span>
+    <span *ngIf="translate.getLangId() !== 'hu'">{{ firm.address.country }}</span>
+</div>
+
+<app-booking-table [isBookingEnabled]="false"></app-booking-table>

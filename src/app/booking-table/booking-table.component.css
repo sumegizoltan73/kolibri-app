@@ -1,0 +1,27 @@
+.booking-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+}
+
+.col33 .mat-form-field {
+    width: 30%;
+}
+
+.bookingtable table .hidden {
+    display: none;
+}
+
+.booking-container.center {
+    text-align: center;
+}
+
+.booking-container button + button {
+    margin-left: 40px;
+}
+
+.button-container {
+    margin-top: 15px;
+}
+
+.mat-progress-bar {
+    margin-bottom: 15px;
+}

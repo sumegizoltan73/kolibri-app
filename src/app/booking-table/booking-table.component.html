@@ -1,0 +1,87 @@
+<div class="bookingtable">
+    <form id="bookingForm" name="bookingForm" novalidate>
+        <div *ngIf="isBookingEnabled" class="booking-container">
+            <mat-form-field appearance="fill">
+                <mat-label>{{ translate.text('Booking.Arrival') }}</mat-label>
+                <input name="arrival" matInput [matDatepicker]="picker" required
+                    [(ngModel)]="data.From" #arrival="ngModel">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="arrival?.errors?.required">{{ translate.text('Booking.Required') }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>{{ translate.text('Booking.NumberOfNights') }}</mat-label>
+                <mat-select [(ngModel)]="data.Nights" [ngModelOptions]="{standalone: true}">
+                  <mat-option value="0">{{ translate.text('Booking.None') }}</mat-option>
+                  <mat-option *ngFor="let i of getArray(30, 1)" value="{{i}}">{{i}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <app-hover-image>
+                <img src="assets/img/booking_2021.jpg" alt="Booking.com rating" />
+            </app-hover-image>
+        </div>
+
+        <div *ngIf="isBookingEnabled" class="booking-container col33">
+            <mat-form-field appearance="fill">
+                <mat-label>{{ translate.text('Booking.Name') }}</mat-label>
+                <input matInput name="name" required [(ngModel)]="data.Name" #name="ngModel" />
+                <mat-error *ngIf="name?.errors?.required">{{ translate.text('Booking.Required') }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>{{ translate.text('Booking.Phone') }}</mat-label>
+                <input matInput name="phone" required [(ngModel)]="data.Phone" #phone="ngModel" />
+                <mat-error *ngIf="phone?.errors?.required">{{ translate.text('Booking.Required') }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>{{ translate.text('Booking.Email') }}</mat-label>
+                <input matInput name="email" email [(ngModel)]="data.Email" #email="ngModel" />
+                <mat-error *ngIf="email?.errors?.email">{{ translate.text('Booking.ValidationEmail') }}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>{{ translate.text('Booking.HeadRoom') }}</th>
+                    <th>{{ translate.text('Booking.HeadCapacity') }}</th>
+                    <th>{{ translate.text('Booking.HeadPrice') }}</th>
+                    <th *ngIf="isBookingEnabled">{{ translate.text('Booking.HeadNumberOfRooms') }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items" [ngClass]="{'hidden': !item.isVisible}">
+                    <td>{{ translate.text(item.label) }}</td>
+                    <td><mat-icon *ngFor="let i of getArray(item.capacity, 1)">person</mat-icon></td>
+                    <td>{{ item.price }}</td>
+                    <td *ngIf="isBookingEnabled">
+                        <mat-form-field appearance="fill">
+                            <mat-select [(ngModel)]="data[item.id]" name="{{item.id}}" [ngModelOptions]="{standalone: true}">
+                              <mat-option value="0">{{ translate.text('Booking.None') }}</mat-option>
+                              <mat-option *ngFor="let i of getArray(item.selectable, 1)" value="{{i}}">{{i}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div *ngIf="isBookingEnabled">
+            <mat-form-field appearance="fill" style="width: 50%;">
+                <mat-label>{{ translate.text('Booking.Comment') }}</mat-label>
+                <textarea matInput name="comment" [(ngModel)]="data.Comment" #comment="ngModel" maxlength="1000" rows="7" cols="25"></textarea>
+                <mat-hint align="end">{{ comment.value?.length || 0}}/1000</mat-hint>
+            </mat-form-field>            
+        </div>
+
+        <div *ngIf="isBookingEnabled" class="booking-container button-container center">
+            <mat-progress-bar mode="indeterminate" *ngIf="isInProgress"></mat-progress-bar>
+            <button mat-raised-button (click)="onBooking(false)">{{ translate.text('Booking.Booking') }}</button>
+            <button mat-raised-button (click)="onBooking(true)">{{ translate.text('Booking.CancelBooking') }}</button>
+        </div>
+    </form>
+</div>
+

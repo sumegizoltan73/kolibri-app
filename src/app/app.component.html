@@ -1,0 +1,31 @@
+<div class="header">
+	<div class="row">
+		<div class="col col-lg-8 col-xxl-8">
+			<div class="name">{{ translate.text('Page.Name') }}</div>
+		</div>
+		<div class="col col-lg-2 col-xxl-2">Login</div>
+		<div class="col col-lg-2 col-xxl-2 languages"> 
+      <img 
+        src="assets/img/{{lang}}.png" 
+        alt="{{ translate.text('Langmenu.' + lang) }}" 
+        title="{{ translate.text('Langmenu.' + lang) }}" 
+        (click)="translate.setLanguage(lang)"
+        *ngFor="let lang of languages"/>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<app-page-menu [menulist]="menu"></app-page-menu>
+		</div>
+	</div>
+</div>
+
+<div class="main-body">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="footer">
+	<p>
+		<a href="mailto:{{ firm?.email }}"><span>{{ firm?.email }}</span></a><span>{{ translate.text('Page.Mobile') }}:</span><span>{{ firm?.mobile }}</span><span>{{ translate.text('Page.Phone') }}:</span><span>{{ firm?.phone }}</span><span>&copy;{{ translate.text('Page.Name') }}&nbsp;{{ currentYear }}&nbsp;{{ translate.text('Page.Copyright') }}</span>
+	</p>
+</div>

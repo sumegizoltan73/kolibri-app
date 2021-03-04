@@ -1,0 +1,30 @@
+<h4>{{ translate.text('Page.OurContactDetails') }}</h4>
+
+<div itemscope itemtype="http://schema.org/Organization" style="float: left; font-size: 0.8em;">
+    <ul class="list-group">
+        <li class="list-group-item" style="padding-bottom: 10px;" itemprop="name">{{ translate.text('Page.Name') }}</li>
+        <li class="list-group-item" style="padding-bottom: 5px;">{{ translate.text('Page.Website') }}: <a href="http://{{ firm.url }}">{{ firm.url }}</a></li>
+        <li class="list-group-item" style="padding-bottom: 5px;">Facebook: <a href="{{ firm.facebookUrl }}">{{ translate.text('Page.Name') }} {{ firm.address.city }}</a></li>
+        <li *ngIf="firm.mobile" class="list-group-item">{{ translate.text('Page.Mobile') }}: <b><span style="padding-top: 10px;" itemprop="telephone">{{ firm.mobile }}</span></b></li>
+        <li *ngIf="firm.phone" class="list-group-item">{{ translate.text('Page.Phone') }}: <b><span style="padding-top: 10px;" itemprop="telephone">{{ firm.phone }}</span></b></li>
+        <li class="list-group-item">
+            <span itemprop="postalCode">{{ firm.address.zip }} </span>
+            <b><span itemprop="addressLocality">{{ firm.address.city }}</span></b>
+            <span itemprop="streetAddress">, {{ firm.address.addressLine }}</span>
+            <span *ngIf="translate.getLangId() !== 'hu'"> {{ firm.address.country }}</span>
+        </li>
+    </ul>
+</div>
+
+<div class="card" style="width: 18rem; float: right;">
+    <div class="card-header">
+        {{ translate.text('Page.Partners') }}
+    </div>
+    <div *ngFor="let partner of partners">
+        <a href="{{ partner.url }}" target="_blank" style="width: inherit;">
+            <div>
+                <span class="badge bg-primary" style="color: white; margin: 5px;">{{ partner.label }}</span>
+            </div>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="menu">
+    <a class="menu-item" 
+        routerLink="/{{ menuitem.path }}" 
+        (click)="selectedItem = menuitem.path"
+        [ngClass]="{'selected': selectedItem === menuitem.path }" 
+        *ngFor="let menuitem of menulist"> 
+        {{ translate.text('Menu.' + menuitem.label) }}
+    </a>
+</div>

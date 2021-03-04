@@ -1,0 +1,22 @@
+.menu {
+    line-height: 26px;;
+}
+
+.menu a.menu-item {
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    color: #ABD5EE;
+    transition: background-color .35s cubic-bezier(.35,0,.25,1);
+}
+
+.menu a.menu-item:hover {
+    background-color: rgba(158,158,158,0.2);
+}
+
+.menu a.selected {
+    border-bottom: 2px solid rgb(255,64,129);
+    color: rgb(255,64,129);
+}

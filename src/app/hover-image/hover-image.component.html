@@ -1,0 +1,9 @@
+<div class="container hover-image-container">
+    <ng-content></ng-content>
+    <div class="card" style="display: none; position: absolute; z-index: 1000;">
+        <div class= "card-header">{{ imageAlt }}</div>
+        <div>
+            <img src="{{ imageSrc }}" alt="{{ imageAlt }}" /> 
+        </div>
+    </div>
+</div>
