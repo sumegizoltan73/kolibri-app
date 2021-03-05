@@ -74,11 +74,12 @@ export class BookingTableComponent implements OnInit {
         this.translate.text('Booking.CancelSended') : 
         this.translate.text('Booking.BookingSended');
       const serviceUrl = isCancel ?
-        this.config.data.booking.serviceUrlBooking :
-        this.config.data.booking.serviceUrlCancelBooking; 
+        this.config.data.booking.serviceUrlCancelBooking :
+        this.config.data.booking.serviceUrlBooking; 
 
       this.dataService.post(serviceUrl, JSON.stringify(this.data))
         .subscribe((data: any) => {
+          console.log(data);
           this.snackBar.open(successLabel, undefined, {
             duration: 3000,
           });
