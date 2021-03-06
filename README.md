@@ -7,12 +7,12 @@ https://stackoverflow.com/questions/44065310/angular-2-routes-not-working-after-
 
 Add this to .htaccess in Apache server (PHP):
 
-> <IfModule mod_rewrite.c>
-> RewriteEngine On
-> RewriteCond %{REQUEST_FILENAME} !-f
-> RewriteCond %{REQUEST_FILENAME} !-d
-> RewriteRule ^ index.html [L]
-> </IfModule>
+>     <IfModule mod_rewrite.c>
+>     RewriteEngine On
+>     RewriteCond %{REQUEST_FILENAME} !-f
+>     RewriteCond %{REQUEST_FILENAME} !-d
+>     RewriteRule ^ index.html [L]
+>     </IfModule>
 
 ## Development server
 
