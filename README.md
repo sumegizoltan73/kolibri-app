@@ -2,6 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
 
+## Routing after build
+https://stackoverflow.com/questions/44065310/angular-2-routes-not-working-after-building-the-project
+
+Add this to .htaccess in Apache server (PHP):
+
+> <IfModule mod_rewrite.c>
+> RewriteEngine On
+> RewriteCond %{REQUEST_FILENAME} !-f
+> RewriteCond %{REQUEST_FILENAME} !-d
+> RewriteRule ^ index.html [L]
+> </IfModule>
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
