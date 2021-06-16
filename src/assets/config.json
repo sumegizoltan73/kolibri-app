@@ -37,6 +37,7 @@
             { "id": "Room4", "label": "Booking.FamilyRoom", "capacity": 3, "price": "21 000 HUF", "selectable": 1, "isVisible": false },
             { "id": "Room5", "label": "Booking.Apartment", "capacity": 4, "price": "24 000 HUF", "selectable": 1, "isVisible": false },
             { "id": "Room6", "label": "Booking.TwinRoom", "capacity": 2, "price": "14 000 HUF", "selectable": 4, "isVisible": true }
-        ]
+        ],
+        "remark": "2021.07.10-ére foglalásokat már nem fogadunk."
     }
 }

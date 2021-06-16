@@ -25,6 +25,7 @@ export class BookingTableComponent implements OnInit {
   translate: TranslateComponent;
   data: any;
   isInProgress: Boolean = false;
+  remark?: string;
   private config: ConfigComponent;
 
   constructor(private dataService: DataService, private snackBar: MatSnackBar) { 
@@ -50,6 +51,11 @@ export class BookingTableComponent implements OnInit {
     this.items?.forEach(element => {
       this.data[element.id] = '';
     });
+    this.remark = this.config.data.booking.remark;
+  }
+
+  hasRemark(): boolean {
+    return (this.remark) ? true: false;
   }
 
   getArray(length: number, start: number): Array<number> {

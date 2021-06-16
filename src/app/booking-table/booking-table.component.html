@@ -83,5 +83,7 @@
             <button mat-raised-button (click)="onBooking(true)">{{ translate.text('Booking.CancelBooking') }}</button>
         </div>
     </form>
+
+    <p *ngIf="hasRemark()" style="font-weight: bold;">{{ remark }}</p>
 </div>
 
