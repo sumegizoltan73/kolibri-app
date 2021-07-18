@@ -49,7 +49,7 @@
             "ValidationEmail": "Érvényes E-Mail címet adjon meg!",
             "RoomWithOneBed": "Egyágyas szoba",
             "DoubleRoom": "Szoba kétszemélyes ággyal",
-            "DoubleRoomWithExtraBed": "Szoba kétszemélyes ággyal és pótággyal",
+            "DoubleRoomWithExtraBed": "Szoba kétszemélyes ággyal és kihúzható pótággyal* (*a pótágy 10 éves korig ajánlott)",
             "FamilyRoom": "Családi szoba kétszemélyes és egyszemélyes ággyal",
             "Apartment": "Lakosztály - 2db kétszemélyes ággyal",
             "TwinRoom": "Szoba 2 külön ággyal"
@@ -104,7 +104,7 @@
             "ValidationEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein!",
             "RoomWithOneBed": "Room with one bed",
             "DoubleRoom": "Double Room",
-            "DoubleRoomWithExtraBed": "Double Room with Extra Bed",
+            "DoubleRoomWithExtraBed": "Double room with extra pull-out bed * (* extra bed recommended for children up to 10 years old)",
             "FamilyRoom": "Family room with double and single beds",
             "Apartment": "Apartment - 2 Double Beds",
             "TwinRoom": "Twin Room"
@@ -159,7 +159,7 @@
             "ValidationEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein!",
             "RoomWithOneBed": "Einzelzimmer",
             "DoubleRoom": "Doppelzimmer",
-            "DoubleRoomWithExtraBed": "Doppelzimmer mit Zustellbett",
+            "DoubleRoomWithExtraBed": "Doppelzimmer mit extra Ausziehbett* (*Zustellbett empfohlen für Kinder bis 10 Jahre)",
             "FamilyRoom": "Familienzimmer mit Doppel- und Einzelbetten",
             "Apartment": "Wohnung - 2 Doppelbetten",
             "TwinRoom": "Zweibettzimmer"

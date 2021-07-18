@@ -66,6 +66,10 @@ export class BookingTableComponent implements OnInit {
     return arr;
   }
 
+  hasFraction(length: number): boolean {
+    return (length > parseInt(length.toString()));
+  }
+
   onBooking(isCancel: Boolean): void {
     const isValid: Boolean = !$('#bookingForm').hasClass('ng-invalid');
 

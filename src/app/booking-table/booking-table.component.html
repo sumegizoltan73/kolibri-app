@@ -55,7 +55,10 @@
             <tbody>
                 <tr *ngFor="let item of items" [ngClass]="{'hidden': !item.isVisible}">
                     <td>{{ translate.text(item.label) }}</td>
-                    <td><mat-icon *ngFor="let i of getArray(item.capacity, 1)">person</mat-icon></td>
+                    <td>
+                        <mat-icon *ngFor="let i of getArray(item.capacity, 1)">person</mat-icon>
+                        <mat-icon *ngIf="hasFraction(item.capacity)" style="font-size: 1em;">person</mat-icon>
+                    </td>
                     <td>{{ item.price }}</td>
                     <td *ngIf="isBookingEnabled">
                         <mat-form-field appearance="fill">
